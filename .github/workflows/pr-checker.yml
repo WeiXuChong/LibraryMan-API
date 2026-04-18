@@ -21,7 +21,6 @@ jobs:
           fi
 
           if [[ ! "$PR_DESCRIPTION" =~ Fixes\ #[0-9]+ ]]; then
-            echo "The PR description must include an issue reference in the format 'Fixes #<number>' (for example: 'Fixes #123')."
             echo "##[error]PR description must include 'Fixes #<number>' (for example: 'Fixes #123')."
             exit 1
           fi
