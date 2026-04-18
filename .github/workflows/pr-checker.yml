@@ -1,6 +1,6 @@
 name: PR Issue Checker
-# Created my @smog-root.
-on:
+
+'on':
   pull_request:
     types: [opened, edited]
 
@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Check PR Description
         id: check_pr_description
@@ -22,8 +22,8 @@ jobs:
           fi
 
           if [[ ! "$PR_DESCRIPTION" =~ Fixes\ #[0-9]+ ]]; then
-            echo "The PR description should include 'Fixes #<issue-number>' if not addressing any issue."
-            echo "##[error]Fixes #NEW must be included in the description."
+            echo "The PR description should include 'Fixes #<issue-number>'."
+            echo "##[error]Fixes #<issue-number> must be included in the description."
             exit 1
           fi
 
