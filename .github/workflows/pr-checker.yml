@@ -22,7 +22,7 @@ jobs:
           fi
 
           if [[ ! "$PR_DESCRIPTION" =~ Fixes\ #[0-9]+ ]]; then
-            echo "The PR description should include 'Fixes #<issue-number>'."
+            echo "The PR description must include 'Fixes #<issue-number>'."
             echo "##[error]Fixes #<issue-number> must be included in the description."
             exit 1
           fi
