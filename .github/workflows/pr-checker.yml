@@ -1,6 +1,5 @@
 name: PR Issue Checker
-
-'on':
+on:
   pull_request:
     types: [opened, edited]
 
