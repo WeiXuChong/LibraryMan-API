@@ -26,7 +26,7 @@ jobs:
         run: chmod +x mvnw && ./mvnw clean install -DskipTests
 
       - name: Run Tests
-        run: ./mvnw clean test
+        run: ./mvnw test
         env:
           ENV: production
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
